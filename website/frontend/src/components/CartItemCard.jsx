@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import {MDBIcon} from 'mdb-react-ui-kit'
 import {AuthContext} from '../context/AuthContext'
 
-const CartItemCard = ({item}) => {
+const CartItemCard = ({key, item, array}) => {
   
   const {cart, itemsInCart, addItemToCart, deleteAllFromCart, removeItemFromCart, trashItemsFromCart} = useContext(AuthContext)
   let qty = cart.filter((itm) => itm.name === item.name)
@@ -53,9 +53,9 @@ const CartItemCard = ({item}) => {
                     </div>
                   </a>
                 </div>
-              <div className="ms-3">
+              <div className="ms-3" style={{paddingRight:'5px'}}>
                 <h5>{item.name}</h5>
-                <p className="small mb-0">{item.brand}</p>
+                <img className='mt-3' src={item.logo_path} alt="" width='140' height='30'/>
               </div>
             </div>
             <div className="d-flex flex-row align-items-center">

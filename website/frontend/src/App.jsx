@@ -28,7 +28,7 @@ const App = () => {
             <Routes>
               <Route path='/' exact element={<Suspense fallback={<Loading />}><LandingPage/></Suspense>} />
               <Route path='/cart'   element={<Suspense fallback={<Loading />}><CartPage/></Suspense>} />
-              <Route path='/home'   element={<Suspense fallback={<Loading />}><HomePage/></Suspense>} />
+              <Route path='/home'   element={<Suspense fallback={<Loading />}><LandingPage/></Suspense>} />
               <Route path='/order'  element={<Suspense fallback={<Loading />}><OrderPage/></Suspense>} />
               <Route path='/signin' element={<Suspense fallback={<Loading />}><SignInPage/></Suspense>} />
               <Route path='/signup' element={<Suspense fallback={<Loading />}><SignUpPage/></Suspense>} />

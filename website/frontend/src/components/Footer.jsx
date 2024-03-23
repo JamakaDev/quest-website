@@ -6,10 +6,10 @@ const Footer = (props) => {
   return (
     <MDBNavbar fixed='bottom'  dark bgColor='dark' className="d-flex flex-column flex-md-row text-center text-md-start justify-content-start px-xl-5 bg-primary" style={{width:'100%', height:'50px'}}>
         
-        <div className="mb-3 mb-md-0" style={{ color: '#abcdef', paddingRight:'60%'}}>
+        <div className="mb-3 mb-md-0" style={{ color: '#abcdef', paddingRight:'45%'}}>
           Copyright © 2023. All rights reserved.
         </div>
-        <h5 style={{paddingRight:'35px', color:'#abcdef'}}>Check us out on 👉</h5>
+        <h5 style={{paddingRight:'5rem', color:'#abcdef'}}>Check us out on 👉</h5>
         
           <MDBBtn tag='a' color='none' className='mx-3 scale-ctrl' >
             <MDBIcon fab icon='google' size="lg" className='soc-icon'/>

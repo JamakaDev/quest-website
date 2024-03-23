@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 import CartItemCard from '../components/CartItemCard'
 
 const CartPage = () => {
-  const {cart} = useContext(AuthContext)
+  const {cart, user} = useContext(AuthContext)
   const [cartItemsToDisplay,  setCartItemsToDisplay] = useState([]) 
   const itemNamesRef = []
   const itemDupesRef = {}
+  const navigate = useNavigate()
   
   let subtotal = cart.map((item) => {return item.retail_price})
   subtotal = subtotal.length ? subtotal.reduce((prev, item) => prev + item) : 0
@@ -15,6 +17,10 @@ const CartPage = () => {
   
   
   useEffect(()=>{
+    if (!user) {
+      navigate('/signin')
+    }
+
     for (let item of cart) {
       if (!itemNamesRef.includes(item.name)){
         itemNamesRef.push(item.name)

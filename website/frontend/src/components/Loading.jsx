@@ -1,10 +1,14 @@
 import React from 'react'
+import ReactLoading from 'react-loading'
 
 const Loading = () => {
   return (
-    <div id="loading-spinner">
-      <i class="fas fa-spinner fa-spin"></i>
-    </div>
+    <ReactLoading 
+      type='spokes'
+      color='red'
+      height={667} 
+      width={375}
+    />
   )
 }
 

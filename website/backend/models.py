@@ -118,6 +118,7 @@ class Product(Model):
     retail_price = DecimalField(max_digits=8, decimal_places=2)
     in_stock = BooleanField(default=True)
     image_path = CharField(max_length=128, blank=True)
+    logo_path = CharField(max_length=128, blank=True)
     manual_path = CharField(max_length=128, blank=True)
 
 
@@ -132,6 +133,7 @@ class Product(Model):
             "retail_price": self.retail_price,
             "in_stock": self.in_stock,
             "image_path": self.image_path,
+            "logo_path": self.logo_path,
             "manual_path": self.manual_path
         }
 

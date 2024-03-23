@@ -3,7 +3,7 @@ import { json, useNavigate } from 'react-router-dom'
 import {AuthContext} from '../context/AuthContext'
 import ProductCard from '../components/ProductCard'
 import Card from '../components/Card'
-import { Skeleton } from '@mui/material'
+import SkeletonCard from '../components/SkeletonCard'
 
 
 import '../App.css'
@@ -41,33 +41,19 @@ const OrderPage = () => {
   }
   
   useEffect(() => {
-    if (!user) {
-      navigate('/signin')
-    }
+    // if (!user) {
+    //   navigate('/signin')
+    // }
     if (!products.length) {
       getProducts()
     }
   }, [])
   
-  const productCards = products.map((product, idx) => 
-      <Card 
-        key={idx}
-        product={product}
-      
-      />
-  )
-
-  const skeletonCards =  new Array(4).fill(0).map((card, idx) => 
-      <Skeleton 
-        key={idx} 
-        className='mb-3' 
-        variant='rectangular' 
-        sx={{bgcolor: '#263238'}} 
-        height='145px' 
-      />
-    )
+  const productCards = products.map((product, idx) => <Card key={idx} product={product} />)
+  const skeletonCards =  new Array(4).fill(0).map((card, idx) => <SkeletonCard key={idx}/>)
+  
   return (
-    <div className='my-container container' style={{ height: '75vh', }}>
+    <div className='my-container ' >
 
       {loading ? 
         <div className="products-container1" >
